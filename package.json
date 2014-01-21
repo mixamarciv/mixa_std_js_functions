@@ -1,0 +1,33 @@
+{
+  "name": "mixa_std_js_functions",
+  "description": "mixa standart javascript functions for node.js",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mixa Marciv",
+    "email": "mixamarciv@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mixamarciv"
+  },
+  "keywords": [
+    "mixa",
+    "standart javascript functions",
+    "std",
+    "js functions"
+  ],
+  "dependencies": {
+    "async": "0.2.9",
+    "ini": "1.x.x",
+    "optimist": "0.6.0"
+  },
+  "main": "./index",
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/mixamarciv/issues"
+  },
+  "homepage": "https://github.com/mixamarciv"
+}
