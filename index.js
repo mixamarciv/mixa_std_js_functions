@@ -1,10 +1,10 @@
 
-exports.str  = require("./lib/str.js");
-exports.int  = require("./lib/int.js");
-exports.dump = require("./lib/dump.js");
-exports.path = require("./lib/path.js");
+module.exports.str  = require("./lib/str.js");
+module.exports.int  = require("./lib/int.js");
+module.exports.dump = require("./lib/dump.js");
+module.exports.path = require("./lib/path.js");
 
 
 
-exports.type = require("./lib/type.js");
+module.exports.type = require("./lib/type.js");
 

@@ -1,2 +1,2 @@
-#my javaScript functions for node js
+my javaScript functions for node js
 
