@@ -7,4 +7,3 @@ module.exports.obj  = require("./lib/obj.js");
 
 
 module.exports.type = require("./lib/type.js");
-
