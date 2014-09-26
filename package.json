@@ -17,9 +17,6 @@
     "js functions"
   ],
   "dependencies": {
-    "async": "0.2.9",
-    "ini": "1.x.x",
-    "optimist": "0.6.0"
   },
   "main": "./index",
   "engines": {
