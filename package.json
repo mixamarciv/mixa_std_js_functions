@@ -16,8 +16,7 @@
     "std",
     "js functions"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "main": "./index",
   "engines": {
     "node": ">= 0.4.0"
@@ -26,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/mixamarciv/issues"
   },
-  "homepage": "https://github.com/mixamarciv"
+  "homepage": "https://github.com/mixamarciv",
+  "readme": "my javaScript functions for node js\n\n",
+  "_id": "mixa_std_js_functions@0.0.1",
+  "dist": {
+    "shasum": "68dee6cf5f711c13c3571646a12eacd48c26b249"
+  },
+  "_from": "https://github.com/mixamarciv/mixa_std_js_functions/tarball/master",
+  "_resolved": "https://github.com/mixamarciv/mixa_std_js_functions/tarball/master"
 }
