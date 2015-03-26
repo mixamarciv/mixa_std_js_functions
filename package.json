@@ -16,7 +16,9 @@
     "std",
     "js functions"
   ],
-  "dependencies": {},
+  "dependencies": {
+     "bigint-node": "*"
+  },
   "main": "./index",
   "engines": {
     "node": ">= 0.4.0"
