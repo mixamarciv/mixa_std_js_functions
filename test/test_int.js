@@ -12,7 +12,7 @@ var count_test_repeat = 2;
 var count_subtests     = 0;
 var count_subtests_big = 5;
 var run_all_test = 1;
-var hide_log_test = 0;
+var hide_log_test = 1;
 
 var tests_info = {pass:0,fail:0};
 /****
@@ -90,7 +90,7 @@ function run_tests_bigint(from_base,to_base,len_from,len_to,repeat,hide) {
 }
 
 if (!run_all_test)
-describe('run int tests bigInt', function() {
+describe('run tests bigInt', function() {
     tests_info = {pass:0,fail:0};
     var max_base = bigint_digitsStr.length;
     for(var i=2;i<=max_base;i++){
@@ -105,31 +105,37 @@ if (run_all_test)
 describe('run int tests', function() {
     
     var from_chars, to_chars;
+    
     var all_symbols = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .,!@#$%^&*()_-+=/{}\\\'|"?[]<>:;'; //`~
+    
     var from_chars_all = '0123456789abcdefghijklmnopqrstuvwxyz';
     var to_chars_all   = all_symbols;
      
   
     if (run_all_test) {
-        var sz1 = from_chars_all.length;
-        var sz2 = to_chars_all.length;
-        var c = [93,36];
-        //c = [8,9,10]
-        for(var i=2;i<=sz1;i+=1){
-            //if (c.indexOf(i)<0) continue;
-            from_chars = from_chars_all.substring(0,i);
-            for(var j=2;j<=sz2;j+=1){
-                //if (c.indexOf(j)<0) continue;
-                
-                to_chars = to_chars_all.substring(0,j);
-                run_tests(from_chars,to_chars,hide_log_test);
+        it('convert from 2-'+from_chars_all.length+' to 2-'+to_chars_all.length+':',function(done){
+            var sz1 = from_chars_all.length;
+            var sz2 = to_chars_all.length;
+            var c = [93,36];
+            //c = [8,9,10]
+            for(var i=2;i<=sz1;i+=1){
+                //if (c.indexOf(i)<0) continue;
+                from_chars = from_chars_all.substring(0,i);
+                for(var j=2;j<=sz2;j+=1){
+                    //if (c.indexOf(j)<0) continue;
+                    
+                    to_chars = to_chars_all.substring(0,j);
+                    run_tests(from_chars,to_chars,hide_log_test);
+                }
             }
-        }
+            done();
+        });
     }
 
     //vtest('50746304641836',from_chars,to_chars);
     //test('112233445566778800112233445566778800112233445566778800',from_chars,to_chars);
-
+    
+    it('convert text to numbers',function(done){
     var symbols = [];
     symbols.push({
             from_chars: all_symbols,
@@ -174,15 +180,13 @@ describe('run int tests', function() {
         to_chars   = t.to_chars;
         clog('\nfrom: '+from_chars+'  to: '+to_chars);
     
-        test('london',from_chars,to_chars,0,0);
-        test('i am from london',from_chars,to_chars,0,0);
-        test('hi my name is helen',from_chars,to_chars,0,0);
-        test('long long long number 3000100500',from_chars,to_chars,0,0);
-        test('long long long number 3000100500 with message: '+
-             '"hi my name is Helen. I am from London. London is a capital of Greate Britan"',from_chars,to_chars,0,0);
+        var text = 'long long long number 3000100500 with message: '
+                  +'"hi my name is Helen. I am from London. London is a capital of Greate Britan"';
+        test(text,from_chars,to_chars,0,0);
     }
-    //test('Hi my name is Helen, i am from London. London is a capital of Greate Britan.',from_chars,to_chars,0,0);
-    /*****/
+
+    done();
+    });
     show_tests_info();
 });
 
