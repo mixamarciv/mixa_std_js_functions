@@ -17,7 +17,8 @@
     "js functions"
   ],
   "dependencies": {
-     "bigint-node": "*"
+     "bigint-node": "*",
+     "node-uuid": "*"
   },
   "main": "./index",
   "engines": {
